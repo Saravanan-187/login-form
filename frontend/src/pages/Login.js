@@ -26,7 +26,7 @@ function Login() {
             return toast.error('All fields are required')
         }
         try {
-            const url = "http://localhost:8080/auth/login";
+            const url = "https://login-form-api-blond.vercel.app/auth/login";
             const response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
