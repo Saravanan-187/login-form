@@ -1,0 +1,214 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.login-container {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeSlide 0.5s ease;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #a5b4fc;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.login-container label {
+  font-size: 1rem;
+  color: #e0e7ff;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Make all input boxes the same width */
+.login-container form > div {
+  width: 100%;
+}
+
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.13);
+  color: #fff;
+  font-size: 1.05rem;
+  outline: none;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(76, 81, 255, 0.07), 0 1.5px 4px rgba(0,0,0,0.08);
+  transition: 
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.login-container input::placeholder {
+  color: #c7d0e0;
+  opacity: 1;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.login-container input:focus {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.10);
+  box-shadow: 0 0 0 2px #6366f1, 0 2px 8px rgba(76, 81, 255, 0.10);
+}
+
+.login-container button {
+  position: relative;
+  padding: 1rem;
+  background: linear-gradient(135deg, #6366f1 0%, #a5b4fc 100%);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.12);
+  transition: 
+    background 0.3s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  width: 60%;
+  align-self: center;
+}
+
+.login-container button:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.18);
+}
+
+.login-container button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+}
+
+.login-container p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.toggle-link {
+  color: #a5b4fc;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem 0.5rem;
+    border-radius: 0.75rem;
+  }
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-loading {
+  position: relative;
+  pointer-events: none;
+  color: transparent !important;
+}
+
+.button-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid #fff;
+  border-top: 2.5px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.logout-btn {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #a5b4fc 100%);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.12);
+  transition:
+    background 0.3s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  width: 60%;
+  align-self: center;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.18);
+}
+
+.logout-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.10);
+}
